@@ -283,7 +283,7 @@
 		},
 
 		_appendItem: function(pageIndex, opts) {
-			var self = this, options, $link, o = self.data('pagination'), $linkWrapper = $('<li></li>'), $ul = self.find('ul');
+			var self = this, options, $link, o = self.data('pagination'), $linkWrapper = $('<li class="page-item"></li>'), $ul = self.find('ul');
 
 			pageIndex = pageIndex < 0 ? 0 : (pageIndex < o.pages ? pageIndex : o.pages - 1);
 
@@ -309,7 +309,7 @@
 				if (o.useAnchors) {
 					$link = $('<a href="' + o.hrefTextPrefix + (pageIndex + 1) + o.hrefTextSuffix + '" class="page-link">' + (options.text) + '</a>');
 				} else {
-					$link = $('<span >' + (options.text) + '</span>');
+					$link = $('<span class="page-link">' + (options.text) + '</span>');
 				}
 				$link.click(function(event){
 					return methods._selectPage.call(self, pageIndex, event);
